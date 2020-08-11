@@ -22,7 +22,7 @@ Event.destroy_all
         start_date: Faker::Date.in_date_period(year: 2021),
         duration: rand(30..120),
         title: Faker::ChuckNorris.fact,
-        description: Faker::Lorem.paragraph,
+        description: Faker::Lorem.paragraph_by_chars(number: 100, supplemental: true),
         price: rand(15..55),
         location: Faker::Address.city)
 
