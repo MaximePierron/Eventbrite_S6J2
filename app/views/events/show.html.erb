@@ -33,7 +33,7 @@
 							<!-- si la personne connectée a écrit le gossip elle a accès aux options d'edit -->
 
 							<% if @event.user == current_user %>
-								<%= link_to "Modifier l'event", edit_event_path, class: "btn btn-primary" %> <%= link_to "Effacer le potin", event_path, data: {confirm: "Etes-vous sûr-e?"}, method: "destroy", class: "btn btn-danger mb-0 ml-2" %>
+								<%= link_to "Modifier l'event", edit_event_path, class: "btn btn-primary" %> <%= link_to "Effacer le potin", event_path, data: {confirm: "Etes-vous sûr-e?"}, method: "delete", class: "btn btn-danger mb-0 ml-2" %>
 							<% end %>
 						</div>
 					</div>
