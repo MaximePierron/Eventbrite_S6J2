@@ -6,8 +6,7 @@ class EventsController < ApplicationController
     end
   
     def create
-      @event = Event.new(user: User.find(session[:user_id]),
-        start_date: params[:start_date],
+      @event = Event.new(start_date: params[:start_date],
         duration: params[:duration],
         title: params[:title],
         description: params[:description],

@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-    DATE_FORMAT = /\d{4}\/\d{2}\/\d{2}/
-    validates :start_date, presence: true, format: { with: DATE_FORMAT }
+    
+    validates :start_date, presence: true
     validates :duration, presence: true
     validates :title, presence: true, length:{minimum:10}
     validates :description, presence: true, length:{minimum: 100}
