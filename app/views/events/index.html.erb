@@ -6,7 +6,7 @@
 
 				<p>Voici une liste des évènements, tu peux aussi en ajouter un en cliquant sur le lien ci-dessous.</p>
 				<hr class="my-4">	
-				<p><%= link_to "Je crée mon évènement!", new_event_path, class: "btn btn-primary	mb-0" %>
+				<p><%= link_to "Je crée mon évènement!", new_event_path, class: "btn btn-primary mb-0" %>
 				</p>
 			</div>
 		</div>
@@ -19,7 +19,7 @@
 		<% @all_events.each do |event| %>
 
 		<div class="row justify-content-center">
-			<%= link_to "En savoir plus", event_path(event.id), class: "list-group-item list-group-item-action mb-0 col-9 mb-3" do %>
+			<%= link_to event_path(event.id), class: "list-group-item list-group-item-action mb-0 col-9 mb-3" do %>
 			<div class="row">
 				<div class="col-9">
 					<h5 class="mb-1"><%= event.title %></h5>
@@ -29,7 +29,7 @@
 					<p>"Où ? <%#{event.location}%>"</p>
 				</div>
 			</div>
-		</div>
 		<% end %>
+		</div>
 		<% end %>
 	</div>
