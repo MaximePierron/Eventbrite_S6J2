@@ -13,13 +13,49 @@
 	</div>
 </div>
 
+<!-- Un petit carroussel des familles pour montrer qqs fake events non cliquables -->
+<div class="carouselContainer mt-3 mb-3 text-center">
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		</ol>
+	  	<!-- Wrapper for slides -->
+	  		<div class="carousel-inner" role="listbox">
+	    		<div class="carousel-item active">
+	    			<%= image_tag ( "https://ruedelinfo.com/wp-content/uploads/2019/08/ac-dc-paris-concert-2020-stade-de-france-rue-de-linfo.png"),style: 'height:550px;width:1100px;' %>
+	    		</div>
+
+	    		<div class="carousel-item">
+	      			<%= image_tag ( "https://www.ouifm.fr/wp-content/uploads/2018/10/elton-john-farewell-640x400.jpg"), style: 'height:550px;width:1100px;'%>
+	    		</div>
+
+	    		<div class="carousel-item">
+	      			<%= image_tag ( "https://orpheumlive.com/wp-content/uploads/Crosby-Stills-Nash1.jpg"), style: 'height:550px;width:1100px;'%>
+	    		</div>
+	  		</div>
+	  	<!-- Controls -->
+	 		<a class="carousel-control-prev" href="#carousel-example-generic" role="button" data-slide="prev">
+	  			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	        	<span class="sr-only">Previous</span>
+	    	</a>
+	    	<a class="carousel-control-next" href="#carousel-example-generic" role="button" data-slide="next">
+	        	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+	        	<span class="sr-only">Next</span>
+	    	</a>
+	</div>
+</div>
+
+
 <!-- Liste des events -->
 
 	<div class="list-group col-6 mx-auto">
 		<% @all_events.each do |event| %>
 
 		<div class="row justify-content-center">
-			<%= link_to event_path(event.id), class: "list-group-item list-group-item-action mb-0 col-9 mb-3" do %>
+			<%= link_to event, class: "list-group-item list-group-item-action mb-0 col-9 mb-3" do %>
 			<div class="row">
 				<div class="col-9">
 					<h5 class="mb-1"><%= event.title %></h5>

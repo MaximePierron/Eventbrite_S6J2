@@ -1,18 +1,24 @@
 <!-- On inclus le contenu dans un row et une colonne pour limiter la largeur -->
 <div class="row">
-  <div class="col-6 mx-auto">
+    <div class="col-6 mx-auto">
 
-    <h3 class="card-title text-center m-4"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
+        <h3 class="card-title text-center m-4"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
 
-    <!-- Sa description -->
-    <p class="text-center"><em><%= @user.description %></em></p>
+        <!-- Sa description -->
+        <p class="text-center"><em><%= @user.description %></em></p>
 
-    <ul class="list-group-flush">
-      <!-- Son email -->
-      <li class="list-group-item"><%= "Email : #{@user.email}" %></li>>
-      <!-- La date de son inscription -->
-      <li class="list-group-item"><%= "Inscris le : #{@user.created_at}" %></li>
-    </ul>
+        <ul class="list-group-flush">
+            <!-- Son email -->
+            <li class="list-group-item"><%= "Email : #{@user.email}" %></li>>
+            <!-- La date de son inscription -->
+            <li class="list-group-item"><%= "Inscris le : #{@user.created_at}" %></li>
+        </ul>
 
-  </div>
+        <% if current_user.id == @user.id %>
+            <%= link_to 'Modifier mes infos', edit_user_path(@user) %> |
+            <%= link_to "Modifier mon mot de passe", edit_user_registration_path(@user) %>
+        <% end %>
+
+
+    </div>
 </div>
