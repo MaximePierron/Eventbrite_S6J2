@@ -27,7 +27,8 @@ Event.destroy_all
             description: Faker::Lorem.paragraph_by_chars(number: 100, supplemental: true),
             price: rand(15..55),
             location: Faker::Address.city,
-            user_id: User.all.sample.id)
+            user: user,
+            user_id: user.id)
 		puts "Event added"
 	end
 
