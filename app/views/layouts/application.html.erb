@@ -21,7 +21,7 @@
   <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <%= link_to "The Gossip Project", root_path, class: "navbar-brand" %>
+    <%= link_to "Eventbrite", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +31,7 @@
       <div class="navbar-nav">
         <!-- Les liens link_to pour ne pas écrire d'URL en dur -->
         <%= link_to "Accueil", root_path, class: "nav-item nav-link" %>
-        <%= link_to "Créer un évènement", '#', class: "nav-item nav-link" %>
+        <%= link_to "Créer un évènement", new_event_path, class: "nav-item nav-link" %>
         <%= link_to "Contact", '#', class: "nav-item nav-link" %>
 
         <% if session[:user_id] %>
@@ -40,8 +40,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilisateur</a>
               <div class="dropdown-menu" aria-labelledby="dropdown08">
-                <%= link_to "Mon profil", '#', class: "dropdown-item"%>  
-                <%= link_to "Se déconnecter", '#', class: "dropdown-item"%>  
+                <%= link_to "Mon profil", user_path, class: "dropdown-item"%>  
+                <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item"%>  
               </div>
             </li>
           </ul>  
@@ -53,8 +53,8 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilisateur</a>
             <div class="dropdown-menu" aria-labelledby="dropdown08">
-              <%= link_to "S'inscrire", '#', class: "dropdown-item"%>  
-              <%= link_to "Se connecter", '#', class: "dropdown-item"%>  
+              <%= link_to "S'inscrire", new_user_registration_path, class: "dropdown-item"%>  
+              <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item"%>  
             </div>
           </li>
         </ul>
