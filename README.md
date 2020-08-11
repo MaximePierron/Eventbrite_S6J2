@@ -1,22 +1,22 @@
 # README
 
-ruby 2.5.1
+ruby 2.5.1  
 
 ## Gems
 
-rails 5.2.4.3
-letter_opener
-dotenv
-faker
-devise
+rails 5.2.4.3  
+letter_opener  
+dotenv  
+faker  
+devise  
 
 ## A faire
-'''
-$ heroku run rails db:drop
-$ heroku run rails db:create
-$ heroku run rails db:migrate
-$ heroku run rails db:seed
-'''
+```
+$ heroku run rails db:drop  
+$ heroku run rails db:create  
+$ heroku run rails db:migrate  
+$ heroku run rails db:seed  
+```
 
 Normalement letter-opener est désactivé donc il faut faire gaffe dans la console aux adresses mails créées pendant le seed et aller checker sur [Yopmail](https://yopmail.com/).
 
@@ -32,14 +32,14 @@ Tu trouveras [ici](https://eventbrite-thp-mp.herokuapp.com/) mon site en product
 J'ai épuisé tout mes envois de mail possibles donc les BDD sont vides sur heroku, d'où le seed à faire.
 
 Si tu veux essayer en local, je peux comprendre alors va dans **config/environments/development.rb** et remplace:  
-'''
+```
 config.action_mailer.default_url_options = { :host => 'eventbrite-thp-mp.herokuapp.com' }
-'''
+```
   
 par :  
-'''
+```
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-'''
+```
   
 **Amuse-toi bien !**
 
