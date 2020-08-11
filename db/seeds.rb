@@ -16,7 +16,7 @@ Event.destroy_all
 		last_name: Faker::Name.last_name,
         description: Faker::Movie.quote,
         email: "#{Faker::Name.first_name}@yopmail.com",
-        encrypted_password: "Doodledee_23")
+        password: "Doodledee@23")
 
     event = Event.create!(
         start_date: Faker::Date.in_date_period(year: 2021),
