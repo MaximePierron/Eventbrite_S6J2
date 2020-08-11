@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 User.destroy_all
+Event.destroy_all
 
 20.times do
     
@@ -18,6 +19,16 @@ User.destroy_all
         encrypted_password: "Doodledee@23")
 
     puts "Un user créé"
+
+    event = Event.create!(
+        start_date: Faker::Date.in_date_period(year: 2021),
+        duration: rand(30..120),
+        title: Faker::ChuckNorris.fact,
+        description: Faker::Lorem.paragraph,
+        price: rand(15..55),
+        location: Faker::Address.city)
+
+    puts "Un event a été créé"
 
 end
         
