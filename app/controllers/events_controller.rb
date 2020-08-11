@@ -12,7 +12,7 @@ class EventsController < ApplicationController
         description: params[:description],
         price: params[:price],
         location: params[:location],
-        user: User.find(session[:user_id]))
+        user: current_user)
   
       if @event.save
         flash[:success] = "Evènement ajouté !"
