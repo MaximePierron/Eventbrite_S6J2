@@ -25,7 +25,7 @@ class EventsController < ApplicationController
     def show
       # On stock dans une variable l'entrée de la BDD qui
       # correspond à notre event via le paramètre récupéré dans l'URL
-      @event = Event.find(params[:id])
+      @event = Event.find(params[:event_id])
     end
   
     def index
