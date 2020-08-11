@@ -14,7 +14,7 @@ class User < ApplicationRecord
     validates :first_name,presence: true
     validates :last_name,presence: true
     validates :email, presence: true, format: /\w+@\w+\.{1}[a-zA-Z]{2,}/
-    validates :encrypted_password,presence: true,format: { with: PASSWORD_FORMAT }
+    validates :encrypted_password, presence: true, format: { with: PASSWORD_FORMAT }
     validates :description, presence: true
 
     after_create :welcome_send
