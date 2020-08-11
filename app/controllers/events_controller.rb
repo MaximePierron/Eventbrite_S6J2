@@ -42,14 +42,14 @@ class EventsController < ApplicationController
     def edit
       @event = Event.find(params[:id])
   
-      # Si l'utilisateur n'est pas l'auteur on redirige vers la page du potin sans pouvoir l'éditer
+      # Si l'utilisateur n'est pas l'auteur on redirige vers la page event sans pouvoir l'éditer
       is_not_author? 
     end
   
     def update
       @event = Event.find(params[:id])
   
-      # Si le user n'est pas l'auteur on redirige vers la page du potin sans pouvoir l'éditer, gràce à is_not_author?
+      # Si le user n'est pas l'auteur on redirige vers la page event sans pouvoir l'éditer, gràce à is_not_author?
       is_not_author?
   
       if @event.update(start_date: params[:start_date],
