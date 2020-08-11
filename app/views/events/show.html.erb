@@ -8,37 +8,7 @@
 
 			<!-- ########### partie event ########### -->
 
-			<div class="row justify-content-md-center mb-2">
-				<div class="col">
-					<div class="card">
-						<div class="card-body text-center">
 
-							<!-- contenu event -->
-
-							<p class="card-title lead">	<%= @event.description %></p>
-
-							<!-- date de création event -->
-
-							<small class="card-text text-muted"><%= @event.created_at %></small>
-
-							<!-- auteur event -->
-
-							<!-- On affiche l'auteur sous forme de lien pour pouvoir accéder à sa page.
-							Le lien permet d'accéder à la page auteur avec son ID en paramètre dans
-							l'URL -->
-							<p class="card-text text-muted">
-							Auteur : <%= link_to "#{@event.user.first_name} #{@event.user.last_name}", user_path(@event.user.id) %>
-							</p>
-
-							<!-- si la personne connectée a écrit le gossip elle a accès aux options d'edit -->
-
-							<% if @event.user == current_user %>
-								<%= link_to "Modifier l'event", edit_event_path, class: "btn btn-primary" %> <%= link_to "Effacer le potin", event_path, data: {confirm: "Etes-vous sûr-e?"}, method: "delete", class: "btn btn-danger mb-0 ml-2" %>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
