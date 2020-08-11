@@ -18,8 +18,6 @@ Event.destroy_all
         email: "#{Faker::Name.first_name}@yopmail.com",
         encrypted_password: "Doodledee@23")
 
-    puts "Un user créé"
-
     event = Event.create!(
         start_date: Faker::Date.in_date_period(year: 2021),
         duration: rand(30..120),
@@ -29,6 +27,6 @@ Event.destroy_all
         location: Faker::Address.city)
 
     puts "Un event a été créé"
-
+    puts "Un user créé"
 end
         
