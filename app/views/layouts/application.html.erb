@@ -41,7 +41,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilisateur</a>
               <div class="dropdown-menu" aria-labelledby="dropdown08">
                 <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item"%>  
-                <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item"%>  
+                <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item"%>  
               </div>
             </li>
           </ul>  
@@ -63,25 +63,12 @@
     </div>
     </nav>
   
-  
-  
-  
-    <!-- Zone pour afficher un flash (message de confirmation), s'il existe -->
-    <% flash.each do |key, value| %>
-    <div class="<%= flash_class(key) %>">
-    <%= value %>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
-    <% end %>
-  
     <%= yield %>
 
-    <footer class="footer mt-4 bg-dark">
-    <div class="container text-center text-light">
-     Cette version d'Eventbrite vous est proposée par Maxime Pierron de Grenoble.
-    </div>
+    <footer class="page-footer mt-4 bg-dark">
+      <div class="container text-center text-light">
+        Cette version d'Eventbrite vous est proposée par Maxime Pierron de Grenoble.
+      </div>
     </footer>
 
     <!-- On appelle le Javascript de Bootstrap -->
