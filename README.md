@@ -31,14 +31,16 @@ J'ai même rendu possible de modifier les infos de ton profil après que tu l'ai
 Tu trouveras [ici](https://eventbrite-thp-mp.herokuapp.com/) mon site en production sur heroku.
 J'ai épuisé tout mes envois de mail possibles donc les BDD sont vides sur heroku, d'où le seed à faire.
 
-Si tu veux essayer en local, je peux comprendre alors va dans **config/environments/development.rb** et remplace:
+Si tu veux essayer en local, je peux comprendre alors va dans **config/environments/development.rb** et remplace:  
 '''
 config.action_mailer.default_url_options = { :host => 'eventbrite-thp-mp.herokuapp.com' }
 '''
-par :
+  
+par :  
 '''
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 '''
+  
 **Amuse-toi bien !**
 
 
