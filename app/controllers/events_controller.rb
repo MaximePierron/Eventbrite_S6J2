@@ -30,8 +30,13 @@ class EventsController < ApplicationController
   
     def index
       # On récupère tous les events dans une variable
-      @all_events = Event.all # On applique reverse pour avoir les derniers events en premier
-
+      @all_events = Event.all
+      puts "*"*60
+      puts "Fetching database for events"
+      # On vérifie que tout fonctionne sur le server avec des puts dans le terminal
+      puts "-"*60    
+      puts @all_events 
+      puts "*"*60
     end
   
     def edit
