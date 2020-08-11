@@ -26,6 +26,8 @@ Ont été créé:
 * La page de création d'un événement (events#new) => Super si tu arrives jusqu'ici
 * La page d'affichage d'un événement (events#show) => Pour les plus déterminés
 
+La page **Contact** n'est pas active le lien n'est pas défini.  
+
 J'ai même rendu possible de modifier les infos de ton profil après que tu l'aies créé pour rajouter ton prénom, ton nom et une description. J'ai laissé les profils des autres utilisateurs visibles car je trouvais complètement idiot de ne pas le faire.
 
 Tu trouveras [ici](https://eventbrite-thp-mp.herokuapp.com/) mon site en production sur heroku.
