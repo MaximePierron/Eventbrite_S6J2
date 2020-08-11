@@ -1,7 +1,10 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+    has_many :attendances
+    has_many :events
+    
+    devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
     PASSWORD_FORMAT = /\A
         (?=.{8,})          # Must contain 8 or more characters
@@ -22,6 +25,5 @@ class User < ApplicationRecord
         UserMailer.welcome_email(self).deliver_now
     end
 
-    has_many :attendances
-    has_many :events
+    
 end

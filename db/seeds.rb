@@ -9,22 +9,26 @@ require 'faker'
 User.destroy_all
 Event.destroy_all
 
-20.times do
-    
-    user = User.create!(
-        first_name: Faker::Name.first_name,
-		last_name: Faker::Name.last_name,
-        description: Faker::Movie.quote,
-        email: "#{Faker::Name.first_name}@yopmail.com",
-        password: "Doodledee@23")
+2.times do
+    10.times do
+        user = User.create!(
+            first_name: Faker::Name.first_name,
+		    last_name: Faker::Name.last_name,
+            description: Faker::Movie.quote,
+            email: "#{Faker::Name.first_name}@yopmail.com",
+            password: "Doodledee@23")
+    end
 
-    event = Event.create!(
-        start_date: Faker::Date.in_date_period(year: 2021),
-        duration: rand(30..120),
-        title: Faker::ChuckNorris.fact,
-        description: Faker::Lorem.paragraph_by_chars(number: 100, supplemental: true),
-        price: rand(15..55),
-        location: Faker::Address.city)
+    10.times do
+        event = Event.create!(
+            start_date: Faker::Date.in_date_period(year: 2021),
+            duration: rand(30..120),
+            title: Faker::ChuckNorris.fact,
+            description: Faker::Lorem.paragraph_by_chars(number: 100, supplemental: true),
+            price: rand(15..55),
+            location: Faker::Address.city,
+            user_id: User.all.sample.id)
+    end
 
     puts "Un event a été créé"
     puts "Un user créé"
